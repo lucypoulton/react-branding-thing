@@ -1,0 +1,10 @@
+@use 'colours';
+
+@mixin button {
+    border-radius: 1em;
+    box-shadow: var(--shadow);
+}
+
+.button {
+    @include button;
+}

@@ -1,0 +1,9 @@
+@use 'src/styles/typography';
+@use 'src/styles/colours';
+
+.lucy .navbar {
+  padding: 0.7em;
+  margin: 0;
+  color: var(--light-primary);
+  background-image: var(--accent);
+}

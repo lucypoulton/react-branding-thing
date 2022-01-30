@@ -1,0 +1,34 @@
+@use 'colours';
+@use 'typography';
+@use 'components/codeblock';
+
+@use 'components/navbar';
+@use 'components/flowbox';
+@use 'components/fadeContainer';
+
+body {
+  margin: 0;
+  @include typography.body;
+  transition: background-color .3s, color .3s;
+}
+
+.lucy {
+  * {
+    font-weight: var(--weight);
+    transition: transform .3s var(--transition),
+    font-weight .3s var(--transition)
+  }
+}
+
+
+.theme-dark {
+  color: var(--light-primary);
+  background-color: var(--dark-primary);
+  --accent: linear-gradient(135deg, var(--purple-dark), var(--pink-dark));
+}
+
+body, .theme-light {
+  color: var(--dark-primary);
+  background-color: var(--light-primary);
+  --accent: linear-gradient(135deg, var(--purple-dark), var(--pink-dark));
+}
