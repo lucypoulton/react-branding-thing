@@ -28,7 +28,6 @@ jobs:
           cd dist
           rm -rf `ls | grep -v .git`
           cp -r ../src/build/* .
-          cp index.html
           echo "brand.lucypoulton.net" > CNAME
           git config --global user.name "GitHub Actions"
           git config --global user.email "github-action@lucypoulton.net"
