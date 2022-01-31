@@ -27,3 +27,8 @@
 
   --transition: cubic-bezier(.9,-.5,.1,1.49);
 }
+
+.accent {
+  background: var(--accent) !important;
+  color: var(--light-primary) !important;
+}

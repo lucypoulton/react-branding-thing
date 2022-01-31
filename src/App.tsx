@@ -19,17 +19,14 @@ const colours: Colours = {
 
 function App() {
 	const [theme, setTheme] = useState("light")
-	const [fade, setFade] = useState(true)
+	const [move, setMove] = useState(false)
 
-	const fadeOutAndBackIn = () => {
-		setFade(false);
-		setTimeout(() => setFade(true), 1000);
-	}
+
+	const toggleTheme = () => setTheme(theme => theme === "dark" ? 'light' : 'dark')
 
 	return <Theme theme={theme as 'light' | 'dark'}>
-		<Navbar content="Lucy's Branding Thing"/>
-		<Fade fadeIn={fade}>
-			<input type="checkbox" onChange={ev => setTheme(ev.target.checked ? "dark" : "light")}/>
+		<Navbar content="Lucy's Branding Thing" lightswitch pulled={theme === "light"} onSwitchPull={toggleTheme}/>
+		<Fade fadeIn={true}>
 			<p>I wrote a set of React components to help my websites look consistent. Did I need to? Absolutely not.
 				Did I do it anyway? You bet!</p>
 
@@ -83,19 +80,22 @@ function App() {
 						choice.
 					</p>
 					<Codeblock lang="JavaScript">{
-						`const codeBlocksAre = (highlightedBy) => {
-	return "PrismJS" + "a custom theme";
+						`const codeBlocksAre = {
+	highlightedBy: () => "PrismJS" + "a theme"
 }`}
 					</Codeblock>
 				</div>
 			</Flowbox>
 
 			<h1>Motion</h1>
-			<p>Motion is really important, it helps give the site some character.</p>
-			<h3><code style={{display: 'inline'}}>0.3s cubic-bezier(.9,-.5,.1,1.5)</code></h3>
-			<p>This curve is nice and springy, giving a responsive, playful feel to components.</p>
+			<p>Motion is really important, it helps give the site some character. For motion, I use this curve:</p>
+			<h3><code style={{display: 'inline'}}>0.4s cubic-bezier(.9,-.5,.1,1.5)</code></h3>
+			<div className={"motionDemo"}><span className={move ? 'move' : undefined} /> </div>
+			<p><button className="accent" onClick={() => setMove(x => !x)}>Move the thing!</button></p>
+			<p>This curve is nice and springy, giving a responsive, playful feel to components.
+				It works best for smaller movements.</p>
 			<p>Fading the entire page in and out can be achieved by reducing opacity, stretching and translating in the
-				Y axis at the same time. <button onClick={fadeOutAndBackIn}>Click me for a demo!</button></p>
+				Y axis at the same time. Reload the page for a demo!</p>
 
 		</Fade>
 	</Theme>;

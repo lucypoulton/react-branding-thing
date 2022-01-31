@@ -1,23 +1,19 @@
-@use 'colours';
-@use 'typography';
 @use 'components/codeblock';
-
 @use 'components/navbar';
 @use 'components/flowbox';
 @use 'components/fadeContainer';
 
+@use 'colours';
+@use 'typography';
+
 body {
   margin: 0;
   @include typography.body;
-  transition: background-color .3s, color .3s;
+  transition: background-color .4s, color .4s;
 }
 
-.lucy {
-  * {
-    font-weight: var(--weight);
-    transition: transform .3s var(--transition),
-    font-weight .3s var(--transition)
-  }
+.lucy * {
+  font-weight: var(--weight);
 }
 
 

@@ -25,9 +25,11 @@
 
   a {
     color: var(--colour-foreground);
+    transition: font-weight .4s var(--transition),
+        transform .4s var(--transition);
+    transform: scale(1);
 
     &:hover {
-      display: inline-block;
       transform: scale(1.05);
       font-weight: 450;
     }

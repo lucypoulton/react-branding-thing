@@ -17,11 +17,27 @@
     font-weight: 450;
 }
 
-.move {
-    margin-left: 0;
-    transition: margin-left 0.3s var(--transition);
+.motionDemo {
+    border: 1px solid var(--light-secondary);
+    padding: 0.1em 0;
+    border-radius: 1em;
+    height: 1.1em;
+    max-width: 20em;
+    margin: auto;
 }
 
-.moved {
-    margin-left: 10em;
+.motionDemo span {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background: var(--dark-secondary);
+    border: 1px solid var(--light-secondary);
+    border-radius: 1em;
+    position: relative;
+    left: 1.5em;
+    transition: left 0.4s var(--transition);
+}
+
+.motionDemo span.move {
+    left: 17.5em;
 }
