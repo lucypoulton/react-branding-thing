@@ -1,10 +1,8 @@
-import React, {useState} from 'react';
 import './App.css';
-import {Navbar} from "./components/navbar";
-import {Theme} from "./components/theme";
-import {Flowbox} from "./components/flowbox";
-import {Codeblock} from "./components/codeblock";
-import {Fade} from "./components/fade";
+import 'lucy-react-components/dist/index.css';
+
+import {Theme, Flowbox, Navbar, Fade, Codeblock} from 'lucy-react-components';
+import {useState} from "react";
 
 type Colours = { [name: string]: [string, string] };
 const colours: Colours = {
