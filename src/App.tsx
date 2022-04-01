@@ -8,7 +8,7 @@ type Colours = { [name: string]: [string, string] };
 const colours: Colours = {
 	'Red': ['#ff9999', '#b35959'],
 	'Yellow': ['#ffcc99', '#cc8e5c'],
-	'Green': ['#99ffff', '#59b386'],
+	'Green': ['#99ffcc', '#59b386'],
 	'Cyan': ['#99ffff', '#59b3b3'],
 	'Blue': ['#99b8ff', '#5974b3'],
 	'Purple': ['#b399ff', '#6f59b3'],
